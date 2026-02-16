@@ -1,4 +1,4 @@
-# Production-Ready DevOps Pipeline with Kubernetes, CI/CD & Monitoring
+# Production Ready DevOps Pipeline with Kubernetes, CI/CD and Monitoring
 
 This project demonstrates how a simple web application can be built, containerized, deployed on Kubernetes, and monitored in a production-style setup. The focus of this project is to showcase practical DevOps skills such as CI/CD automation, container orchestration, health checks, monitoring, and logging.
 
