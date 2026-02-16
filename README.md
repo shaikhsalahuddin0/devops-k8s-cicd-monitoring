@@ -1,86 +1,114 @@
-# 🚀 Production-Ready DevOps Pipeline with Kubernetes, CI/CD & Monitoring
+# Production-Ready DevOps Pipeline with Kubernetes, CI/CD & Monitoring
 
-This project demonstrates an end-to-end DevOps workflow for building, deploying, and monitoring a containerized web application using modern DevOps tools and practices. The goal of this project is to simulate a production-like environment and showcase practical DevOps skills such as CI/CD automation, container orchestration, and observability.
+This project demonstrates how a simple web application can be built, containerized, deployed on Kubernetes, and monitored in a production-style setup. The focus of this project is to showcase practical DevOps skills such as CI/CD automation, container orchestration, health checks, monitoring, and logging.
+
+The goal was not just to run an application, but to build an end-to-end workflow similar to what DevOps teams follow in real-world environments.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
-The project covers the complete lifecycle of an application:
+This project covers the complete lifecycle of an application:
 
-- Source code management  
-- Containerization of the application  
+- Code pushed to GitHub  
+- Automated build and containerization using CI/CD  
 - Deployment on Kubernetes with multiple replicas  
-- Automated CI/CD pipeline for build and deployment  
-- Application and infrastructure monitoring  
+- Health checks and service exposure  
+- Metrics collection using Prometheus  
+- Visualization and monitoring using Grafana  
 - Centralized logging for troubleshooting  
 
-This setup reflects how DevOps teams operate in real-world production systems.
+It reflects how modern DevOps pipelines are designed and operated.
 
 ---
 
-## 🏗 High-Level Architecture
+## Architecture & Flow
+
+The flow of this project is as follows:
 
 1. Developer pushes code to GitHub  
-2. CI/CD pipeline builds Docker image  
-3. Image is deployed to Kubernetes  
-4. Kubernetes manages replicas and service networking  
-5. Prometheus scrapes application and system metrics  
-6. Grafana visualizes traffic, latency, and resource usage  
-7. Logs are collected and used for debugging  
+2. CI/CD pipeline builds a Docker image  
+3. The image is deployed to Kubernetes  
+4. Kubernetes runs the application in pods and exposes it via a service  
+5. Prometheus scrapes metrics from the application  
+6. Grafana visualizes traffic, latency, CPU, and memory usage  
+7. Logs are collected for debugging and monitoring  
+
 
 ---
 
-## 🔧 Tech Stack
+## Tech Stack
 
-- **Application**: Python (Flask)  
-- **Containerization**: Docker  
-- **Orchestration**: Kubernetes (Minikube for local setup)  
-- **CI/CD**: Jenkins (can be adapted to GitHub Actions)  
-- **Monitoring**: Prometheus, Grafana  
-- **Logging**: Loki, Promtail  
-- **Local Cluster**: Minikube  
+- Application: Python (Flask)  
+- Containerization: Docker  
+- Orchestration: Kubernetes (Minikube for local setup)  
+- CI/CD: Jenkins  
+- Monitoring: Prometheus, Grafana  
+- Logging: Loki, Promtail  
+- Local Cluster: Minikube  
 
 ---
 
-## 🤔 Why This Stack
+## Why This Stack
 
-This stack was chosen to reflect tools commonly used in modern DevOps environments:
+This stack was chosen to match tools commonly used in real DevOps environments:
 
-- Docker ensures consistent application packaging across environments.  
-- Kubernetes handles deployment, scaling, and service management.  
-- CI/CD automates build and deployment to reduce manual errors.  
+- Docker helps package the application in a consistent and portable way.  
+- Kubernetes manages deployment, scaling, and service networking.  
+- CI/CD automates build and deployment, reducing manual effort and mistakes.  
 - Prometheus and Grafana provide visibility into application performance and system health.  
-- Centralized logging helps debug issues in distributed systems.
+- Centralized logging makes debugging easier when multiple pods are running.
 
 ---
 
-## ✅ Key Features
+## Key Features
 
-- Containerized web application deployed on Kubernetes  
-- Rolling updates and multiple replicas for high availability  
-- Automated build and deployment using CI/CD  
-- Health checks and metrics endpoints exposed by the application  
+- Containerized application deployed on Kubernetes  
+- Rolling updates and multiple replicas for availability  
+- Automated build and deployment pipeline  
+- Health check and metrics endpoints exposed by the app  
 - Real-time monitoring dashboards in Grafana  
-- Centralized logging for easier debugging  
+- Logs collected for troubleshooting  
 
 ---
 
-## 📸 Monitoring Output (Grafana)
+## Live Outputs & Monitoring
 
-The Grafana dashboard shows:
+Below are real outputs captured from the running system. These screenshots show that the application is live on Kubernetes and is being monitored properly.
 
-- HTTP requests per second  
-- Request latency (P95)  
-- Pod CPU usage  
-- Pod memory usage  
-- Number of running replicas  
+### Application Running (Home Endpoint)
+This confirms that the service is accessible.
 
-> Screenshot available in the `screenshots/` folder.
+![Application Home](<img width="1920" height="1020" alt="localhost_8080 - Google Chrome 16-02-2026 11_01_55" src="https://github.com/user-attachments/assets/2bb9c2ff-6b41-4044-8e03-dce8cda9aa16" />
+)
 
 ---
 
-## ▶️ How to Run Locally (Minikube)
+### Health Check Endpoint
+Used by Kubernetes readiness and liveness probes.
+
+![Health Endpoint](<img width="1920" height="1020" alt="localhost_8080_health - Google Chrome 16-02-2026 11_11_44" src="https://github.com/user-attachments/assets/069a1841-835e-4dfd-b946-e3b6691a7624" />
+)
+
+---
+
+### Metrics Endpoint (Prometheus)
+Exposes application and process metrics.
+
+![Metrics Endpoint](<img width="1920" height="1020" alt="localhost_8080_metrics - Google Chrome 16-02-2026 11_13_01" src="https://github.com/user-attachments/assets/e7c6f5da-19d7-449e-b465-579759cf5e1d" />
+)
+
+---
+
+### Monitoring Dashboard (Grafana)
+Shows request rate, latency, pod CPU usage, memory usage, and running replicas.
+
+![Grafana Dashboard](<img width="1536" height="1024" alt="ChatGPT Image Feb 16, 2026, 05_58_33 PM" src="https://github.com/user-attachments/assets/9c68c4c5-d9f0-43fc-be0a-5ef76183c202" />
+)
+
+---
+
+## How to Run Locally (Minikube)
 
 ```bash
 minikube start
