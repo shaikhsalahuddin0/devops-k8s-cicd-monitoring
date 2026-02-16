@@ -103,8 +103,7 @@ Exposes application and process metrics.
 ### Monitoring Dashboard (Grafana)
 Shows request rate, latency, pod CPU usage, memory usage, and running replicas.
 
-<img width="1536" height="1024" alt="ChatGPT Image Feb 16, 2026, 05_58_33 PM" src="https://github.com/user-attachments/assets/8b95bcb1-4a9f-45b8-9a9c-b34106f08e95" />
-
+<img width="1536" height="1024" alt="Grafana" src="https://github.com/user-attachments/assets/4ed0080c-695a-463a-b5b6-47d07028e5fd" />
 
 ---
 
